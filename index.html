@@ -60,7 +60,7 @@
 								<h1>Die Notaufnahme ist heute in der <span class="klinik">$klinik</span></h1>
 							</header>
 							<div class="content">
-								<p>Heute, <span class="datum">$datestr</span>, ist ein <span class="noteven">un</span>gerader Wochentag.<br>
+								<p>Heute, <span class="datum">$datestr</span>, ist ein <span class="odd">un</span>gerader Wochentag.<br>
 								Rufen Sie bei Unklarheit die Klinik an</p>
 								<ul class="actions">
 									<li><a href="#navigation" class="button next scrolly">Los Navigieren</a></li>
@@ -376,11 +376,8 @@ $(function($) {
 	var even = (day%2 === 0);
 	$('.datum').html(datestr);
 	var klinik = '', link = '';
-	if (!even) {
-		$('.noteven').show();
-	}
-
 	if (even) {
+		$('.odd').hide();
 		klinik = 'Südstadtklinik';
 		link = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2341.14336022466!2d12.106064915554413!3d54.07120098013735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47ac50b90e1e9075%3A0x485b4143b16b3886!2sKlinikum+S%C3%BCdstadt+Rostock!5e0!3m2!1sde!2sde!4v1489263004910';
 	} else {
